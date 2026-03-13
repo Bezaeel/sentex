@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
 Export DistilBERT Sentiment Model to ONNX
-Run this on your local machine with: uv run export_model_to_onnx.py
+Run this on your local machine with: uv run export_tc_model.py
 
 Or with uv pip:
   uv venv
   . .venv/bin/activate  # On Windows: .venv\Scripts\activate
   uv pip install transformers optimum[onnxruntime] onnx
-  python export_model_to_onnx.py
+  python export_tc_model.py
 """
 
 import os

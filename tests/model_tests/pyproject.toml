@@ -1,0 +1,13 @@
+[project]
+name = "model-tests"
+version = "0.1.0"
+description = "Test ONNX sentiment model on Yelp dataset"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "transformers",
+    "optimum[onnxruntime]",
+]
+
+[tool.uv]
+dev-dependencies = []
