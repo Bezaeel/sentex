@@ -45,11 +45,11 @@ def test_model():
 
     # Load model
     print("📁 Loading ONNX model...")
-    model_path = "../../models"
+    model_path = "../../models/text-classification/v1"
 
     if not Path(model_path).exists():
         print(f"❌ Model not found at {model_path}")
-        print("   Run: python export_model_to_onnx.py")
+        print("   Run: python exporters/export_tc_model.py")
         return
 
     model = ORTModelForSequenceClassification.from_pretrained(model_path)

@@ -52,13 +52,13 @@ fn main() -> Result<()> {
     let session = Session::builder()?
         .with_optimization_level(GraphOptimizationLevel::Level3)?
         .with_intra_threads(4)?
-        .commit_from_file("../../models/model.onnx")
-        .context("Failed to load model. Make sure models/model.onnx exists!")?;
+        .commit_from_file("../../models/text-classification/v1/model.onnx")
+        .context("Failed to load model. Make sure ../../models/text-classification/v1/model.onnx exists!")?;
     println!("   ✓ Model loaded\n");
 
     // Load tokenizer
     println!("📁 Loading tokenizer...");
-    let tokenizer = Tokenizer::from_file("../../models/tokenizer.json")
+    let tokenizer = Tokenizer::from_file("../../models/text-classification/v1/tokenizer.json")
         .map_err(|e| anyhow::anyhow!("Failed to load tokenizer: {}", e))?;
     println!("   ✓ Tokenizer loaded\n");
 
