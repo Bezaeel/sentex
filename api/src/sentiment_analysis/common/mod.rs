@@ -1,3 +1,5 @@
 mod prediction;
 
-pub use prediction::{predict_sentiment, AppState};
+pub mod loader;
+
+pub use prediction::{predict_sentiment, SentimentState};
