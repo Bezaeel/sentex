@@ -1,0 +1,6 @@
+[env]
+# torch-sys bundles x86_64 libtorch for macOS; set deployment target to avoid
+# clang rejecting the bundled headers with the auto-detected SDK version (26.x).
+MACOSX_DEPLOYMENT_TARGET = "14.0"
+# Suppress is_arithmetic specialization error in older libtorch C++ headers.
+CXXFLAGS = "-Wno-invalid-specialization"

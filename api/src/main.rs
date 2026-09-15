@@ -47,7 +47,7 @@ async fn main() -> Result<()> {
         .route("/", get(health_check))
         .route("/health", get(health_check))
         .merge(sentiment_analysis_v1_routes())
-        .merge(api::translation::translate_endpoint())
+        .merge(api::translation::rust_bert::translate_endpoint())
         .with_state(state);
 
     let addr = "0.0.0.0:3000";
