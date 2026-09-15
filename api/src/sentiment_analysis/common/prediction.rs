@@ -6,15 +6,13 @@ use parking_lot::Mutex;
 use std::sync::Arc;
 use tokenizers::Tokenizer;
 
-// Application state
 #[derive(Clone)]
-pub struct AppState {
+pub struct SentimentState {
     pub session: Arc<Mutex<Session>>,
     pub tokenizer: Arc<Tokenizer>,
 }
 
-// Core prediction function
-pub async fn predict_sentiment(state: &AppState, text: &str) -> Result<(String, f32, Vec<f32>)> {
+pub async fn predict_sentiment(state: &SentimentState, text: &str) -> Result<(String, f32, Vec<f32>)> {
     // Tokenize the input
     let encoding = state
         .tokenizer
